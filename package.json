@@ -1,0 +1,17 @@
+{
+  "name": "babel-plugin-transform-require-context",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/asapach/babel-plugin-transform-require-context.git",
+  "author": "Aliaksei Sapach <dreamsonic@tut.by>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-template": "^6.26.0"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}

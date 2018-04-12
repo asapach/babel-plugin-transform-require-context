@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should not transform local require 1`] = `
+"
+function test(require) {
+  const context = require.context('foo', false);
+}"
+`;
+
+exports[`should not transform require.context property 1`] = `
+"
+const context = require.context;"
+`;
+
+exports[`should transform require.context() call 1`] = `
+"
+const context = function () {
+    function req() {}
+
+    req.keys = function () {
+        return [];
+    };
+
+    req.resolve = function () {};
+
+    return req;
+}();"
+`;
