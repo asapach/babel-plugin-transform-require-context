@@ -34,3 +34,4 @@ $ babel --plugins transform-require-context script.js
 require("babel-core").transform("code", {
   plugins: ["transform-require-context"]
 });
+```
