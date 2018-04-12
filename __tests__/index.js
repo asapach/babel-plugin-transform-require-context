@@ -19,6 +19,14 @@ test('should transform require.context() call', () => {
   expect(code).toMatchSnapshot();
 });
 
+test('should transform require.context() result', () => {
+  const input = `
+    var modules = requireAll(require.context("./spec", true, /^\\.\\/.*\\.js$/));
+  `;
+  const {code} = babel.transform(input, {plugins: [plugin]});
+  expect(code).toMatchSnapshot();
+});
+
 test('should not transform local require', () => {
   const input = `
     function test(require) {

@@ -26,3 +26,18 @@ const context = function () {
     return req;
 }();"
 `;
+
+exports[`should transform require.context() result 1`] = `
+"
+var modules = requireAll(function () {
+    function req() {}
+
+    req.keys = function () {
+        return [];
+    };
+
+    req.resolve = function () {};
+
+    return req;
+}());"
+`;
