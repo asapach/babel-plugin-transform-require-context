@@ -1,0 +1,1 @@
+# babel-plugin-transform-require-context
