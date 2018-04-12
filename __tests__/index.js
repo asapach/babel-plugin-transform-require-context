@@ -3,7 +3,7 @@
 const babel = require('babel-core');
 const plugin = require('../');
 
-test('should not transform require.context property', () => {
+test(`doesn't transform require.context property`, () => {
   const input = `
     const context = require.context;
   `;
@@ -11,7 +11,7 @@ test('should not transform require.context property', () => {
   expect(code).toMatchSnapshot();
 });
 
-test('should transform require.context() call', () => {
+test(`transforms require.context() call`, () => {
   const input = `
     const context = require.context('components', true, /\\.html$/);
   `;
@@ -19,7 +19,7 @@ test('should transform require.context() call', () => {
   expect(code).toMatchSnapshot();
 });
 
-test('should transform require.context() result', () => {
+test(`transforms require.context() result`, () => {
   const input = `
     var modules = requireAll(require.context("./spec", true, /^\\.\\/.*\\.js$/));
   `;
@@ -27,7 +27,7 @@ test('should transform require.context() result', () => {
   expect(code).toMatchSnapshot();
 });
 
-test('should not transform local require', () => {
+test(`doesn't transform local require`, () => {
   const input = `
     function test(require) {
       const context = require.context('foo', false);
