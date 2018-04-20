@@ -6,7 +6,7 @@
   "author": "Aliaksei Sapach <dreamsonic@tut.by>",
   "license": "MIT",
   "dependencies": {
-    "babel-template": "^6.26.0"
+    "babel-template": "6"
   },
   "devDependencies": {
     "jest": "^22.4.3"
