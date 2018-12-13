@@ -1,6 +1,6 @@
 'use strict';
 
-const babel = require('babel-core');
+const babel = require('@babel/core');
 const plugin = require('../');
 
 test(`doesn't transform require.context property`, () => {

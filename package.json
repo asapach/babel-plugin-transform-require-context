@@ -6,10 +6,11 @@
   "author": "Aliaksei Sapach <dreamsonic@tut.by>",
   "license": "MIT",
   "dependencies": {
-    "babel-template": "6"
+    "@babel/template": "7"
   },
   "devDependencies": {
-    "jest": "^22.4.3"
+    "@babel/core": "7",
+    "jest": "23"
   },
   "scripts": {
     "test": "jest"

@@ -1,9 +1,9 @@
 'use strict';
 
-const template  = require('babel-template');
+const template  = require('@babel/template');
 
 module.exports = ({types: t}) => {
-  const contextTemplate = template(
+  const contextTemplate = template.smart(
     `(function () {
       function req() {}
       req.keys = function () { return []; }

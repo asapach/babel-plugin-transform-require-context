@@ -1,43 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`doesn't transform local require 1`] = `
-"
-function test(require) {
+"function test(require) {
   const context = require.context('foo', false);
 }"
 `;
 
-exports[`doesn't transform require.context property 1`] = `
-"
-const context = require.context;"
-`;
+exports[`doesn't transform require.context property 1`] = `"const context = require.context;"`;
 
 exports[`transforms require.context() call 1`] = `
-"
-const context = function () {
-    function req() {}
+"const context = function () {
+  function req() {}
 
-    req.keys = function () {
-        return [];
-    };
+  req.keys = function () {
+    return [];
+  };
 
-    req.resolve = function () {};
+  req.resolve = function () {};
 
-    return req;
+  return req;
 }();"
 `;
 
 exports[`transforms require.context() result 1`] = `
-"
-var modules = requireAll(function () {
-    function req() {}
+"var modules = requireAll(function () {
+  function req() {}
 
-    req.keys = function () {
-        return [];
-    };
+  req.keys = function () {
+    return [];
+  };
 
-    req.resolve = function () {};
+  req.resolve = function () {};
 
-    return req;
+  return req;
 }());"
 `;
