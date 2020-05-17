@@ -1,6 +1,6 @@
 # babel-plugin-transform-require-context
 
-![npm](https://img.shields.io/npm/dw/babel-plugin-transform-require-context)
+[![NPM Downloads](https://img.shields.io/npm/dw/babel-plugin-transform-require-context)](https://npmjs.org/package/babel-plugin-transform-require-context)
 
 A [Babel](http://babeljs.io) plugin that transforms [webpack](https://webpack.js.org/)-specific `require.context()`
 into dummy function calls so that the code can run safely outside of the webpack environment, e.g. in Node.
