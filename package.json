@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@babel/core": "7",
-    "jest": "23"
+    "jest": "27"
   },
   "scripts": {
     "test": "jest"
