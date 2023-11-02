@@ -11,13 +11,10 @@ exports[`doesn't transform require.context property 1`] = `"const context = requ
 exports[`transforms require.context() call 1`] = `
 "const context = function () {
   function req() {}
-
   req.keys = function () {
     return [];
   };
-
   req.resolve = function () {};
-
   return req;
 }();"
 `;
@@ -25,13 +22,10 @@ exports[`transforms require.context() call 1`] = `
 exports[`transforms require.context() result 1`] = `
 "var modules = requireAll(function () {
   function req() {}
-
   req.keys = function () {
     return [];
   };
-
   req.resolve = function () {};
-
   return req;
 }());"
 `;
