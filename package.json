@@ -2,7 +2,10 @@
   "name": "babel-plugin-transform-require-context",
   "version": "0.2.0",
   "main": "index.js",
-  "repository": "https://github.com/asapach/babel-plugin-transform-require-context.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asapach/babel-plugin-transform-require-context.git"
+  },
   "author": "Aliaksei Sapach <aliaksei.dreamsonic@gmail.com>",
   "license": "MIT",
   "peerDependencies": {

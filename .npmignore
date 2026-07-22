@@ -1,5 +1,7 @@
 /__tests__
 /.idea
+/.claude
+/.github
 *.log
 .travis.yml
 .eslintrc.yml
