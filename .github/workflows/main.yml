@@ -2,15 +2,22 @@ name: CI
 on: [push]
 jobs:
   build:
-    name: Test ${{ matrix.node }}
+    name: Babel ${{ matrix.babel }} / Node ${{ matrix.node }}
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        node: [ '22', '24', '26' ]
+        include:
+          - { node: '22', babel: '7' }
+          - { node: '24', babel: '7' }
+          - { node: '24', babel: '8' }
+          - { node: '26', babel: '8' }
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node }}
       - run: yarn install
+      # Test against the target Babel major (plugin supports both 7 and 8).
+      - run: yarn add --dev @babel/core@${{ matrix.babel }}
       - run: yarn test

@@ -1,9 +1,10 @@
 'use strict';
 
-const template  = require('@babel/template');
+module.exports = (api) => {
+  api.assertVersion('^7.0.0 || ^8.0.0');
+  const t = api.types;
 
-module.exports = ({types: t}) => {
-  const contextTemplate = template.smart(
+  const contextTemplate = api.template.smart(
     `(function () {
       function req() {}
       req.keys = function () { return []; }
@@ -12,6 +13,7 @@ module.exports = ({types: t}) => {
     }())`);
 
   return {
+    name: 'transform-require-context',
     visitor: {
       MemberExpression(path) {
         const node = path.node;
